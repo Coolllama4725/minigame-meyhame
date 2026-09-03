@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Mayhem</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 700px;
+    }
+
+    h1 {
+      font-size: 64px;
+      margin-bottom: 10px;
+      text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+    }
+
+    .subtitle {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      max-width: 350px;
+      margin: 15px auto;
+      padding: 18px;
+      border: none;
+      border-radius: 14px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      background: white;
+      color: #5b4bb7;
+      transition: transform 0.15s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>MINI MAYHEM</h1>
+    <div class="subtitle">Fast games. Big chaos. 😈</div>
+
+    <button onclick="createGame()">CREATE GAME</button>
+    <button onclick="joinGame()">JOIN GAME</button>
+    <button onclick="howToPlay()">HOW TO PLAY</button>
+  </div>
+
+  <script>
+    function createGame() {
+      alert("Game creation coming next!");
+    }
+
+    function joinGame() {
+      alert("Game joining coming next!");
+    }
+
+    function howToPlay() {
+      alert("Compete in a series of fast mini-games and score as many points as possible!");
+    }
+  </script>
+
+</body>
+</html>
