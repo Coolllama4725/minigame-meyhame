@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,159 +12,244 @@
 
 <body>
 
-  <!-- TOP BAR -->
-  <header class="topbar">
+  <!-- LOGIN / SIGNUP SCREEN -->
+  <section id="auth-screen" class="auth-screen">
 
-    <div class="logo">
-      MINIGAME<br>
-      <span>MAYHEM</span>
+    <div class="auth-card">
+
+      <div class="logo">
+        MINIGAME<br>
+        <span>MAYHEM</span>
+      </div>
+
+      <p class="auth-subtitle">Enter the chaos.</p>
+
+      <div id="signup-form">
+
+        <h2>Create Account</h2>
+
+        <input
+          type="text"
+          id="signup-username"
+          placeholder="Username"
+          maxlength="20"
+        >
+
+        <input
+          type="email"
+          id="signup-email"
+          placeholder="Email"
+        >
+
+        <input
+          type="password"
+          id="signup-password"
+          placeholder="Password"
+        >
+
+        <button onclick="signUp()">CREATE ACCOUNT</button>
+
+        <p>
+          Already have an account?
+          <button class="text-button" onclick="showLogin()">Log in</button>
+        </p>
+
+      </div>
+
+
+      <div id="login-form" style="display: none;">
+
+        <h2>Log In</h2>
+
+        <input
+          type="email"
+          id="login-email"
+          placeholder="Email"
+        >
+
+        <input
+          type="password"
+          id="login-password"
+          placeholder="Password"
+        >
+
+        <button onclick="logIn()">LOG IN</button>
+
+        <p>
+          Need an account?
+          <button class="text-button" onclick="showSignup()">Create one</button>
+        </p>
+
+      </div>
+
+      <p id="auth-message"></p>
+
     </div>
 
-    <div class="top-stats">
+  </section>
 
-      <div class="stat">
-        🪙 <span id="coins">1,000</span>
+
+  <!-- GAME HUB -->
+  <div id="game-hub" style="display: none;">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+      <div class="logo">
+        MINIGAME<br>
+        <span>MAYHEM</span>
       </div>
 
-      <div class="stat">
-        ⭐ Level <span id="level">1</span>
-      </div>
+      <div class="top-stats">
 
-      <button class="icon-button" onclick="openSettings()">
-        ⚙️
-      </button>
-
-    </div>
-
-  </header>
-
-
-  <!-- MAIN HUB -->
-  <main>
-
-    <!-- PLAYER PROFILE -->
-    <section class="hero">
-
-      <div class="profile">
-
-        <div class="avatar">
-          <div class="avatar-eyes">
-            <span></span>
-            <span></span>
-          </div>
-
-          <div class="avatar-mouth"></div>
+        <div class="stat">
+          🪙 <span id="coins">500</span>
         </div>
 
-        <div class="player-info">
-          <h2>Player</h2>
-          <p class="title">Chaos Starter</p>
+        <div class="stat">
+          ⭐ Level <span id="level">1</span>
         </div>
 
-      </div>
-
-
-      <!-- PLAY -->
-      <button class="play-button" onclick="playGame()">
-        PLAY
-        <span>▶</span>
-      </button>
-
-    </section>
-
-
-    <!-- MENU -->
-    <section>
-
-      <h2 class="section-title">MAYHEM HUB</h2>
-
-      <div class="menu-grid">
-
-        <button class="menu-card customize" onclick="customize()">
-          <div class="menu-icon">😎</div>
-          <div>
-            <strong>Customize</strong>
-            <small>Change your avatar</small>
-          </div>
-        </button>
-
-
-        <button class="menu-card packs" onclick="packs()">
-          <div class="menu-icon">📦</div>
-          <div>
-            <strong>Packs</strong>
-            <small>Collect themed items</small>
-          </div>
-        </button>
-
-
-        <button class="menu-card shop" onclick="shop()">
-          <div class="menu-icon">🛒</div>
-          <div>
-            <strong>Shop</strong>
-            <small>Spend your coins</small>
-          </div>
-        </button>
-
-
-        <button class="menu-card leaderboard" onclick="leaderboard()">
-          <div class="menu-icon">🏆</div>
-          <div>
-            <strong>Leaderboard</strong>
-            <small>See who's winning</small>
-          </div>
-        </button>
-
-
-        <button class="menu-card how-to" onclick="howToPlay()">
-          <div class="menu-icon">❓</div>
-          <div>
-            <strong>How to Play</strong>
-            <small>Learn the chaos</small>
-          </div>
-        </button>
-
-
-        <button class="menu-card settings" onclick="openSettings()">
-          <div class="menu-icon">⚙️</div>
-          <div>
-            <strong>Settings</strong>
-            <small>Game preferences</small>
-          </div>
+        <button class="icon-button" onclick="openSettings()">
+          ⚙️
         </button>
 
       </div>
 
-    </section>
+    </header>
 
 
-    <!-- DAILY CHALLENGE -->
-    <section class="challenge">
+    <!-- MAIN HUB -->
+    <main>
 
-      <div class="challenge-header">
+      <!-- PLAYER PROFILE -->
+      <section class="hero">
 
-        <div>
-          <span class="challenge-label">🔥 DAILY CHALLENGE</span>
-          <h3>Play 3 Minigames</h3>
+        <div class="profile">
+
+          <div class="avatar">
+            <div class="avatar-eyes">
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="avatar-mouth"></div>
+          </div>
+
+          <div class="player-info">
+            <h2 id="player-name">Player</h2>
+            <p class="title" id="player-title">Newbie</p>
+          </div>
+
         </div>
 
-        <strong>0 / 3</strong>
 
-      </div>
+        <!-- PLAY -->
+        <button class="play-button" onclick="playGame()">
+          PLAY
+          <span>▶</span>
+        </button>
 
-      <div class="progress">
-        <div class="progress-fill"></div>
-      </div>
-
-      <p>Complete challenges to earn XP and coins.</p>
-
-    </section>
-
-  </main>
+      </section>
 
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="game.js"></script>
+      <!-- MENU -->
+      <section>
+
+        <h2 class="section-title">MAYHEM HUB</h2>
+
+        <div class="menu-grid">
+
+          <button class="menu-card customize" onclick="customize()">
+            <div class="menu-icon">😎</div>
+            <div>
+              <strong>Customize</strong>
+              <small>Change your avatar</small>
+            </div>
+          </button>
+
+
+          <button class="menu-card packs" onclick="packs()">
+            <div class="menu-icon">📦</div>
+            <div>
+              <strong>Packs</strong>
+              <small>Collect themed items</small>
+            </div>
+          </button>
+
+
+          <button class="menu-card shop" onclick="shop()">
+            <div class="menu-icon">🛒</div>
+            <div>
+              <strong>Shop</strong>
+              <small>Spend your coins</small>
+            </div>
+          </button>
+
+
+          <button class="menu-card leaderboard" onclick="leaderboard()">
+            <div class="menu-icon">🏆</div>
+            <div>
+              <strong>Leaderboard</strong>
+              <small>See who's winning</small>
+            </div>
+          </button>
+
+
+          <button class="menu-card how-to" onclick="howToPlay()">
+            <div class="menu-icon">❓</div>
+            <div>
+              <strong>How to Play</strong>
+              <small>Learn the chaos</small>
+            </div>
+          </button>
+
+
+          <button class="menu-card settings" onclick="openSettings()">
+            <div class="menu-icon">⚙️</div>
+            <div>
+              <strong>Settings</strong>
+              <small>Game preferences</small>
+            </div>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- DAILY CHALLENGE -->
+      <section class="challenge">
+
+        <div class="challenge-header">
+
+          <div>
+            <span class="challenge-label">🔥 DAILY CHALLENGE</span>
+            <h3>Play 3 Minigames</h3>
+          </div>
+
+          <strong>0 / 3</strong>
+
+        </div>
+
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
+
+        <p>Complete challenges to earn XP and coins.</p>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script src="game.js"></script>
 
 </body>
 </html>
+```
