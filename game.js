@@ -7,19 +7,3 @@ const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_PUBLISHABLE_KEY
 );
-
-const testConnection = async () => {
-  const { data, error } = await supabaseClient
-    .from("players")
-    .select("id")
-    .limit(1);
-
-  if (error) {
-    alert("Supabase error: " + error.message);
-    return;
-  }
-
-  alert("🎉 Supabase is connected! The players table is reachable.");
-};
-
-testConnection();
