@@ -22,4 +22,4 @@ const testConnection = async () => {
   alert("🎉 Supabase is connected! The players table is reachable.");
 };
 
-alert("JavaScript is running!");
+testConnection();
